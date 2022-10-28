@@ -17,8 +17,7 @@ class controlllerViews extends Controller
 
     function PostRegistrer(validatorForms $req){
         $data = $req->input('txtTitulo');
-        print_r($data);
-        return redirect()->route('registrer')->with('exito', $data);
+        return redirect()->route('registrer')->with('exito', compact('data'));
         
     }
 }
