@@ -29,17 +29,17 @@
 
         <div class="mb-3">
           <label class="form-label">ISBN</label>
-          <input type="text" class="form-control" id="txtISBN" name="txtISBN" value="{{ old('txtISBN')}}">
+          <input type="text" class="form-control" id="txtISBN" name="txtISBN" value="{{old('txtISBN')}}">
           <p class="text-danger fst-italic">{{ $errors->first('txtISBN') }}</p>
         </div>
         <div class="mb-3">
           <label class="form-label">Autor</label>
-          <input type="text" class="form-control" id="txtAutor" name="txtAutor" value="{{ old('txtAutor')}}">
+          <input type="text" class="form-control" id="txtAutor" name="txtAutor" value="{{old('txtAutor')}}">
           <p class="text-danger fst-italic">{{ $errors->first('txtAutor') }}</p>
         </div>
         <div class="mb-3">
           <label class="form-label">Editorial</label>
-          <input type="text" class="form-control" id="txtEditorial" name="txtEditorial" value="{{ old('txtEditorial')}}">
+          <input type="text" class="form-control" id="txtEditorial" name="txtEditorial" value="{{old('txtEditorial')}}">
           <p class="text-danger fst-italic">{{ $errors->first('txtEditorial') }}</p>
         </div>
       </div>
@@ -47,18 +47,18 @@
       <div class="col-6">
         <div class="mb-3">
           <label class="form-label">Titulo</label>
-          <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" value="{{ old('txtTitulo')}}">
+          <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" value="{{old('txtTitulo')}}">
           <p class="text-danger fst-italic">{{ $errors->first('txtTitulo') }}</p>
 
         </div>
         <div class="mb-3">
           <label class="form-label">Paginas</label>
-          <input type="text" class="form-control" id="txtPaginas" name="txtPaginas" value="{{ old('txtPaginas')}}">
+          <input type="text" class="form-control" id="txtPaginas" name="txtPaginas" value="{{old('txtPaginas')}}">
           <p class="text-danger fst-italic">{{ $errors->first('txtPaginas') }}</p>
         </div>
         <div class="mb-3">
           <label class="form-label">Email de editorial</label>
-          <input type="text" class="form-control" id="txtEmailEditorial" name="txtEmailEditorial" value="{{ old('txtEmailEditorial')}}">
+          <input type="text" class="form-control" id="txtEmailEditorial" name="txtEmailEditorial" value="{{old('txtEmailEditorial')}}">
           <p class="text-danger fst-italic">{{ $errors->first('txtEmailEditorial') }}</p>
         </div>
       </div>

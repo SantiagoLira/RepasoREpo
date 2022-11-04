@@ -24,7 +24,7 @@ class validatorForms extends FormRequest
     public function rules()
     {
         return [
-            'txtISBN' => 'required | numeric | Min:13 ',
+            'txtISBN' => 'required | numeric | min_digits:13 ',
             'txtAutor' => 'required',
             'txtEditorial' => 'required',
             'txtTitulo' => 'required',
