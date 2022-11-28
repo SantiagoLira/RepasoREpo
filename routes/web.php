@@ -23,3 +23,6 @@ Route::get('registro', [controlllerViews::class, 'ShowRegistrer'])->name('regist
 
 Route::post('submitRegistrer', [controlllerViews::class, 'PostRegistrer'])->name('saveRegistrer');
 
+
+Route::get('registrarClientes', [controlllerViews::class, 'ShowRegistrerClient'])->name('registrerClient');
+Route::post('submitclient', [controlllerViews::class, 'Postcliente'])->name('saveRegistrerClient');
