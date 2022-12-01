@@ -12,7 +12,7 @@
 
                 <div class="card-body">
                     <form method="post" action="{{route('clientes.update',$consulta->idCliente)}}">
-                    @csrf
+                        @csrf
                         {!!method_field('PUT')!!}
                         <div class="row">
                             <div class="col-6">

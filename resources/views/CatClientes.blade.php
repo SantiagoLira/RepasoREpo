@@ -13,7 +13,7 @@
 </script>" !!}
 
 @endif
-@if (session()->has('eliminacion'))
+@if (session()->has('clienteEliminado'))
 {!! "<script>
     Swal.fire(
         'Correcto!',
@@ -38,7 +38,7 @@
 
 <div class="text-center my-2">
     <a type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#ModalIngresar">
-        <i class="bi bi-upload"></i>Ingresar Recuerdo
+        <i class="bi bi-upload"></i>Ingresar Cliente
     </a>
 </div>
 

@@ -22,14 +22,14 @@ Route::get('/', function () {
 Route::get('principal', [controlllerViews::class, 'ShowMain'])->name('main');
 Route::get('registro', [controlllerViews::class, 'ShowRegistrer'])->name('registrer');
 
-Route::post('submitRegistrer', [controlllerViews::class, 'PostRegistrer'])->name('saveRegistrer');
+// Route::post('submitRegistrer', [controlllerViews::class, 'PostRegistrer'])->name('saveRegistrer');
 
 
-Route::get('registrarClientes', [controlllerViews::class, 'ShowRegistrerClient'])->name('registrerClient');
-Route::post('submitclient', [controlllerViews::class, 'Postcliente'])->name('saveRegistrerClient');
+// Route::get('registrarClientes', [controlllerViews::class, 'ShowRegistrerClient'])->name('registrerClient');
+// Route::post('submitclient', [controlllerViews::class, 'Postcliente'])->name('saveRegistrerClient');
 
-Route::get('registro/create',[controladorBD::class, 'createLibro'])->name('libro.create');
-Route::get('registrarCliente/create',[controladorBD::class, 'createLibro'])->name('cliente.create');
+// Route::get('registro/create',[controladorBD::class, 'createLibro'])->name('libro.create');
+// Route::get('registrarCliente/create',[controladorBD::class, 'createLibro'])->name('cliente.create');
 
 // Cliente
 Route::get('CatClientes',[controladorBD::class, 'indexCliente'])->name('clientes.index');
@@ -41,4 +41,15 @@ Route::put('CatClientes/{id}',[controladorBD::class, 'updateCliente'])->name('cl
 
 Route::get('CatClientes/{id}/delete',[controladorBD::class, 'showCliente'])->name('clientes.eliminar');
 Route::delete('CatClientes/{id}',[controladorBD::class, 'destroyCliente'])->name('clientes.destroy');
+
+// Libro
+Route::get('CatLibros',[controladorBD::class, 'indexLibro'])->name('libro.index');
+Route::post('CatLibros',[controladorBD::class, 'storeLibro'])->name('libro.store');
+Route::get('CatLibros/create',[controladorBD::class, 'createLibro'])->name('libro.create');
+
+Route::get('CatLibros/{id}/edit',[controladorBD::class, 'editLibro'])->name('libro.edit');
+Route::put('CatLibros/{id}',[controladorBD::class, 'updateLibro'])->name('libro.update');
+
+Route::get('CatLibros/{id}/delete',[controladorBD::class, 'showLibro'])->name('libro.eliminar');
+Route::delete('CatLibros/{id}',[controladorBD::class, 'destroyLibro'])->name('libro.destroy');
 

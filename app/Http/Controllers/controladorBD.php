@@ -14,7 +14,7 @@ class controladorBD extends Controller
     public function indexLibro()
     {
         $resultLibros = DB::table('tb_libros')->get();
-        return view('registro',compact('resultLibros'));
+        return view('CatLibros',compact('resultLibros'));
         
     }
     public function indexCliente()
@@ -26,7 +26,7 @@ class controladorBD extends Controller
     public function createLibro()
     {
         $resultLibros = DB::table('tb_libros')->get();
-        return view('registro',compact('resultLibros'));
+        return view('CatLibros',compact('resultLibros'));
     }
     public function createCliente()
     {
@@ -46,6 +46,7 @@ class controladorBD extends Controller
             "created_at"=> carbon::now(),
             "updated_at"=> carbon::now()
         ]);
+        return redirect('CatLibros/create')->with('exito',"tu cliente se guardo");
     }
 
     public function storeCliente(ValidatorClient $cliente)
@@ -58,13 +59,13 @@ class controladorBD extends Controller
             "created_at"=> carbon::now(),
             "updated_at"=> carbon::now()
         ]);
-        return redirect('CatClientes/create')->with('exito',"tu recuerdo se guardo");
+        return redirect('CatClientes/create')->with('exito',"tu cliente se guardo");
     }
 
     public function showLibro($idLibro)
     {
         $libro = DB::table('tb_libros')->where('idLibro',$idLibro)->first();
-        return redirect('eliminarLibro',compact('libro'));
+        return redirect('CatLibros',compact('libro'));
     }
 
     public function showCliente($idCliente)
@@ -76,7 +77,7 @@ class controladorBD extends Controller
     public function editLibro($idLibro)
     {
         $libro = DB::table('tb_libros')->where('idLibro',$idLibro)->first();
-        return redirect('editarLibro',compact('libro'));
+        return redirect('CatLibros',compact('libro'));
     }
     public function editCliente($idCliente)
     {
@@ -95,7 +96,7 @@ class controladorBD extends Controller
             "email"=> $request->input('txtEmailEditorial'),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('libros')->with('edicion',"tu cliente se actualizo");
+        return redirect('CatLibros')->with('edicion',"tu cliente se actualizo");
     }
     public function updateCliente(Request $request, $idCliente)
     {
@@ -112,7 +113,7 @@ class controladorBD extends Controller
     public function destroyLibro($idLibro)
     {
         DB::table('tb_libros')->where('idLibro',$idLibro)->delete();
-        return redirect('editarLibro')->with('clienteEliminado','');
+        return redirect('CatLibros')->with('libroEliminado','');
     }
 
     public function destroyCLiente($idCliente)

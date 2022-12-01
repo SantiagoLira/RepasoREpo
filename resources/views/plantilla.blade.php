@@ -21,8 +21,8 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link {{ request()->routeIs('main')?'active':'' }}" aria-current="page" href="{{ route('main') }}">Principal</a>
-                    <a class="nav-link {{ request()->routeIs('registrer')?'active':'' }}" aria-current="page" href="{{ route('registrer') }}">registro</a>
-                    <a class="nav-link {{ request()->routeIs('clientes.indext')?'active':'' }}" aria-current="page" href="{{ route('clientes.index') }}">registrar Cliente</a>
+                    <a class="nav-link {{ request()->routeIs('registrer')?'active':'' }}" aria-current="page" href="{{ route('libro.index') }}">Libros</a>
+                    <a class="nav-link {{ request()->routeIs('clientes.indext')?'active':'' }}" aria-current="page" href="{{ route('clientes.index') }}">Clientes</a>
                 </div>
                 </div>
             </div>
