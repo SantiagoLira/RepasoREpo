@@ -3,14 +3,18 @@
 @section('contenido')
 
 @include('ModalIngresarLibro')
-@if (session()->has('edicion'))
-{!! "<script>
-    Swal.fire(
-        'Correcto!',
-        'Libro Actualizado!',
-        'success'
-    )
-</script>" !!}
+@if (session('edicion'))
+<script>
+    Swal.fire({
+        position: 'top',
+        icon: 'success',
+        text: 'EL libro {{session('
+        edicion ')['
+        data ']}} ha sido Actualizado',
+        showConfirmButton: false,
+        timer: 1500
+    })
+</script>
 
 @endif
 @if (session()->has('libroEliminado'))
@@ -23,14 +27,18 @@
 </script>" !!}
 
 @endif
-@if (session()->has('exito'))
-{!! "<script>
-    Swal.fire(
-        'Correcto!',
-        'Libro registrado!',
-        'success'
-    )
-</script>" !!}
+@if (session('exito'))
+<script>
+    Swal.fire({
+        position: 'top',
+        icon: 'success',
+        text: 'EL libro {{session('
+        exito ')['
+        data ']}} ha sido Registrado',
+        showConfirmButton: false,
+        timer: 1500
+    })
+</script>
 
 @endif
 
@@ -51,12 +59,15 @@
             <th scope="col">Paginas</th>
             <th scope="col">Editorial</th>
             <th scope="col">Email</th>
+            <th scope="col">funciones</th>
         </tr>
     </thead>
     <tbody>
         @foreach($resultLibros as $consulta)
+        @include('ModalDeleteLibro')
+
         @include('ModalEditarLibro')
-        @include('ModalEliminarLibro')
+
         <tr>
             <th scope="row">{{$consulta->isbn}}</th>
             <td>{{$consulta->titulo}}</td>
@@ -65,16 +76,17 @@
             <td>{{$consulta->editorial}}</td>
             <td>{{$consulta->email}}</td>
             <td>
-                
                 <a type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#ModalActualizar{{$consulta->idLibro}}">
                     <i class="bi bi-pencil"></i>Editar
                 </a>
 
-                <a type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#EliminarLibro{{$consulta->idLibro}}">
-                    <i class="bi bi-trash3"></i>Eliminar
+
+                <a type="button" class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#ModalEliminar{{$consulta->idLibro}}">
+                    <i class="bi bi-trash3"></i>eliminar
                 </a>
             </td>
         </tr>
+
         @endforeach
     </tbody>
 </table>

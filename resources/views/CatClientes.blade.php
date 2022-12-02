@@ -23,14 +23,16 @@
 </script>" !!}
 
 @endif
-@if (session()->has('exito'))
-{!! "<script>
-    Swal.fire(
-        'Correcto!',
-        'Cliente registrado!',
-        'success'
-    )
-</script>" !!}
+@if (session('exito'))
+<script>
+  Swal.fire({
+    position: 'top',
+    icon: 'success',
+    text: 'EL Cliente {{session('exito')['data']}} ha sido Registrado',
+    showConfirmButton: false,
+    timer: 1500
+  })
+</script>
 
 @endif
 

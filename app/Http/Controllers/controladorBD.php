@@ -46,7 +46,8 @@ class controladorBD extends Controller
             "created_at"=> carbon::now(),
             "updated_at"=> carbon::now()
         ]);
-        return redirect('CatLibros/create')->with('exito',"tu cliente se guardo");
+        $data = $libro->input('txtTitulo');
+        return redirect('CatLibros/create')->with('exito',compact('data'));
     }
 
     public function storeCliente(ValidatorClient $cliente)
@@ -59,7 +60,8 @@ class controladorBD extends Controller
             "created_at"=> carbon::now(),
             "updated_at"=> carbon::now()
         ]);
-        return redirect('CatClientes/create')->with('exito',"tu cliente se guardo");
+        $data = $cliente->input('txtNombre');
+        return redirect('CatClientes/create')->with('exito',compact('data'));
     }
 
     public function showLibro($idLibro)
@@ -96,7 +98,8 @@ class controladorBD extends Controller
             "email"=> $request->input('txtEmailEditorial'),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('CatLibros')->with('edicion',"tu cliente se actualizo");
+        $data = $request->input('txtTitulo');
+        return redirect('CatLibros')->with('edicion',compact('data'));
     }
     public function updateCliente(Request $request, $idCliente)
     {
@@ -107,7 +110,8 @@ class controladorBD extends Controller
             "email"=> $request->input('txtEmailCliente'),
             "updated_at"=> Carbon::now()
         ]);
-        return redirect('CatClientes')->with('edicion',"tu cliente se actualizo");
+        $data = $request->input('txtNombre');
+        return redirect('CatClientes')->with('edicion',compact('data'));
     }
 
     public function destroyLibro($idLibro)

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="ModalActualizar{{$consulta->idLibro}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalActualizar" aria-hidden="true">
+<div class="modal fade" id="ModalActualizar2{{$consulta->idLibro}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalActualizar" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
 
